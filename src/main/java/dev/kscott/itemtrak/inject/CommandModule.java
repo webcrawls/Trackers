@@ -4,7 +4,9 @@ import cloud.commandframework.CommandManager;
 import cloud.commandframework.bukkit.CloudBukkitCapabilities;
 import cloud.commandframework.execution.AsynchronousCommandExecutionCoordinator;
 import cloud.commandframework.paper.PaperCommandManager;
+import cloud.commandframework.tasks.TaskRecipe;
 import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -54,6 +56,11 @@ public final class CommandModule extends AbstractModule {
     public final void configure() {
         this.bind(CommandManager.class).toInstance(commandManager);
         this.bind(PaperCommandManager.class).toInstance(commandManager);
+    }
+
+    @Provides
+    public final TaskRecipe providesTaskRecipe() {
+        return this.commandManager.taskRecipe();
     }
 
 
