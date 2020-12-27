@@ -1,0 +1,4 @@
+name: ItemTrak
+version: @version@
+main: dev.kscott.itemtrak.ItemTrak
+api-version: 1.16
