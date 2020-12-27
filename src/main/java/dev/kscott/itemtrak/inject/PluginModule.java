@@ -24,6 +24,9 @@ public final class PluginModule extends AbstractModule {
         this.plugin = plugin;
     }
 
+    /**
+     * Configures Guice to provide JavaPlugin and ItemTrakPlugin
+     */
     @Override
     public final void configure() {
         this.bind(JavaPlugin.class).toInstance(plugin);
