@@ -3,7 +3,6 @@ import org.apache.tools.ant.filters.ReplaceTokens
 plugins {
     id("java")
     id("java-library")
-    id("checkstyle")
     id("com.github.johnrengelman.shadow") version("6.1.0")
 }
 
