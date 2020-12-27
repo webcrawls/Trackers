@@ -1,9 +1,7 @@
 package dev.kscott.itemtrak.inject;
 
 import com.google.inject.AbstractModule;
-import com.google.inject.Provides;
 import dev.kscott.itemtrak.ItemTrakPlugin;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
