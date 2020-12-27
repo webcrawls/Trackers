@@ -7,6 +7,7 @@ import cloud.commandframework.paper.PaperCommandManager;
 import cloud.commandframework.tasks.TaskRecipe;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
+import com.google.inject.Singleton;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -19,14 +20,14 @@ import java.util.function.Function;
 public final class CommandModule extends AbstractModule {
 
     /**
-     * PaperCommandManager reference
+     * PaperCommandManager reference.
      */
     private final @NonNull PaperCommandManager<CommandSender> commandManager;
 
     /**
-     * Initializes the PaperCommandManager
+     * Initializes the PaperCommandManager.
      *
-     * @param plugin JavaPlugin reference
+     * @param plugin JavaPlugin reference.
      */
     public CommandModule(final @NonNull JavaPlugin plugin) {
         final @NonNull Function<CommandSender, CommandSender> mapper = Function.identity();
@@ -50,14 +51,29 @@ public final class CommandModule extends AbstractModule {
     }
 
     /**
-     * Binds CommandManager and PaperCommandManager
+     * Provides the CommandManager.
+     * @return {@link this#commandManager}
      */
-    @Override
-    public final void configure() {
-        this.bind(CommandManager.class).toInstance(commandManager);
-        this.bind(PaperCommandManager.class).toInstance(commandManager);
+    @Provides
+    @Singleton
+    public final CommandManager<CommandSender> providesCommandManager() {
+        return this.commandManager;
     }
 
+    /**
+     * Provides the PaperCommandManager.
+     * @return {@link this#commandManager}
+     */
+    @Provides
+    @Singleton
+    public final PaperCommandManager<CommandSender> providesPaperCommandManager() {
+        return this.commandManager;
+    }
+
+    /**
+     * Provides the TaskRecipe.
+     * @return {@link TaskRecipe}
+     */
     @Provides
     public final TaskRecipe providesTaskRecipe() {
         return this.commandManager.taskRecipe();
