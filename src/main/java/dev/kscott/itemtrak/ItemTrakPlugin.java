@@ -2,7 +2,7 @@ package dev.kscott.itemtrak;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class ItemTrak extends JavaPlugin {
+public final class ItemTrakPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
