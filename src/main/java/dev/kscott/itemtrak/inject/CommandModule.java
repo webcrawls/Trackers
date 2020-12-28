@@ -40,22 +40,24 @@ public final class CommandModule extends AbstractModule {
                     mapper
             );
 
-            if (commandManager.queryCapability(CloudBukkitCapabilities.ASYNCHRONOUS_COMPLETION)) {
-                commandManager.registerAsynchronousCompletions();
-            }
-
             if (commandManager.queryCapability(CloudBukkitCapabilities.BRIGADIER)) {
                 commandManager.registerBrigadier();
             }
 
+            if (commandManager.queryCapability(CloudBukkitCapabilities.ASYNCHRONOUS_COMPLETION)) {
+                commandManager.registerAsynchronousCompletions();
+            }
+
 
         } catch (Exception e) {
-            throw new RuntimeException("Failed to register command manager!", e);
+            e.printStackTrace();
+            throw new RuntimeException("Failed to register command manager!");
         }
     }
 
     /**
      * Provides the CommandManager.
+     *
      * @return {@link this#commandManager}
      */
     @Provides
@@ -66,6 +68,7 @@ public final class CommandModule extends AbstractModule {
 
     /**
      * Provides the PaperCommandManager.
+     *
      * @return {@link this#commandManager}
      */
     @Provides
@@ -76,13 +79,13 @@ public final class CommandModule extends AbstractModule {
 
     /**
      * Provides the TaskRecipe.
+     *
      * @return {@link TaskRecipe}
      */
     @Provides
     public final TaskRecipe providesTaskRecipe() {
         return this.commandManager.taskRecipe();
     }
-
 
 
 }

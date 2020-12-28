@@ -25,7 +25,7 @@ public class CommandItemTrak {
 
         final Command.Builder<CommandSender> builder = this.manager.commandBuilder("itemtrak", "it");
 
-        builder.handler(this::handleCommandItemTrak);
+        this.manager.command(builder.handler(this::handleCommandItemTrak));
     }
 
     private void handleCommandItemTrak(final @NonNull CommandContext<CommandSender> context) {
