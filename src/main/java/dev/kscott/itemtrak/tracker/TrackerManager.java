@@ -1,7 +1,6 @@
 package dev.kscott.itemtrak.tracker;
 
 import com.google.inject.Inject;
-import net.kyori.adventure.text.serializer.bungeecord.BungeeComponentSerializer;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
