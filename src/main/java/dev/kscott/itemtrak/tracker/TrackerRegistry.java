@@ -3,6 +3,7 @@ package dev.kscott.itemtrak.tracker;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,6 +21,10 @@ public class TrackerRegistry {
 
     public @Nullable TrackerConfig getTrackerConfig(final @NonNull String id) {
         return trackerMap.get(id);
+    }
+
+    public Collection<TrackerConfig> getTrackerConfigs() {
+        return trackerMap.values();
     }
 
 }
