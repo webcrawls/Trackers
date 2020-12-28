@@ -36,6 +36,7 @@ dependencies {
     implementation("net.kyori:adventure-platform-bukkit:4.0.0-SNAPSHOT")
     implementation("cloud.commandframework:cloud-paper:1.3.0")
     implementation("org.spongepowered:configurate-hocon:4.0.0")
+    implementation("net.kyori:adventure-text-minimessage:4.0.0-SNAPSHOT")
 }
 
 tasks {
