@@ -44,6 +44,10 @@ public final class CommandModule extends AbstractModule {
                 commandManager.registerAsynchronousCompletions();
             }
 
+            if (commandManager.queryCapability(CloudBukkitCapabilities.BRIGADIER)) {
+                commandManager.registerBrigadier();
+            }
+
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to register command manager!", e);
