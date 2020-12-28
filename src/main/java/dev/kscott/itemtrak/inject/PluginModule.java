@@ -1,6 +1,7 @@
 package dev.kscott.itemtrak.inject;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.name.Names;
 import dev.kscott.itemtrak.ItemTrakPlugin;
 import net.kyori.adventure.platform.AudienceProvider;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
@@ -37,8 +38,12 @@ public final class PluginModule extends AbstractModule {
      */
     @Override
     public final void configure() {
-        this.bind(JavaPlugin.class).toInstance(plugin);
-        this.bind(ItemTrakPlugin.class).toInstance(plugin);
+        this.bind(JavaPlugin.class)
+                .annotatedWith(Names.named("JavaPlugin"))
+                .toInstance(plugin);
+        this.bind(ItemTrakPlugin.class)
+                .annotatedWith(Names.named("JavaPlugin"))
+                .toInstance(plugin);
 
         this.bind(AudienceProvider.class).toInstance(audiences);
         this.bind(BukkitAudiences.class).toInstance(audiences);
