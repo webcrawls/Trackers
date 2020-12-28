@@ -14,9 +14,14 @@ public class TrackerModule extends AbstractModule {
 
     @Override
     public final void configure() {
+        final @NonNull TrackerRegistry trackerRegistry = new TrackerRegistry();
+
         this.bind(TrackerRegistry.class)
                 .annotatedWith(Names.named("TrackerRegistry"))
-                .toInstance(new TrackerRegistry());
+                .toInstance(trackerRegistry);
+
+        this.bind(TrackerRegistry.class)
+                .toInstance(trackerRegistry);
     }
 
     @Provides
@@ -25,6 +30,7 @@ public class TrackerModule extends AbstractModule {
             @Named("TrackerRegistry") final @NonNull TrackerRegistry registry,
             @Named("JavaPlugin") final @NonNull JavaPlugin plugin
     ) {
+        System.out.println(registry.getTrackerConfigs());
         return new TrackerManager(plugin, registry);
     }
 
