@@ -27,8 +27,8 @@ public class TrackerModule extends AbstractModule {
     @Provides
     @Singleton
     public @NonNull TrackerManager providesTrackerManager(
-            @Named("TrackerRegistry") final @NonNull TrackerRegistry registry,
-            @Named("JavaPlugin") final @NonNull JavaPlugin plugin
+            final @NonNull TrackerRegistry registry,
+            final @NonNull JavaPlugin plugin
     ) {
         System.out.println(registry.getTrackerConfigs());
         return new TrackerManager(plugin, registry);

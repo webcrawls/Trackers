@@ -39,10 +39,8 @@ public final class PluginModule extends AbstractModule {
     @Override
     public final void configure() {
         this.bind(JavaPlugin.class)
-                .annotatedWith(Names.named("JavaPlugin"))
                 .toInstance(plugin);
         this.bind(ItemTrakPlugin.class)
-                .annotatedWith(Names.named("JavaPlugin"))
                 .toInstance(plugin);
 
         this.bind(BukkitAudiences.class).toInstance(audiences);
