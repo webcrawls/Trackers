@@ -73,15 +73,4 @@ public final class CommandModule extends AbstractModule {
         return this.commandManager;
     }
 
-    /**
-     * Provides the TaskRecipe.
-     *
-     * @return {@link TaskRecipe}
-     */
-    @Provides
-    public final TaskRecipe providesTaskRecipe() {
-        return this.commandManager.taskRecipe();
-    }
-
-
 }
