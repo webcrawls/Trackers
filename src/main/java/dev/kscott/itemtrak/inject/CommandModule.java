@@ -40,10 +40,6 @@ public final class CommandModule extends AbstractModule {
                     mapper
             );
 
-            if (commandManager.queryCapability(CloudBukkitCapabilities.BRIGADIER)) {
-                commandManager.registerBrigadier();
-            }
-
             if (commandManager.queryCapability(CloudBukkitCapabilities.ASYNCHRONOUS_COMPLETION)) {
                 commandManager.registerAsynchronousCompletions();
             }
