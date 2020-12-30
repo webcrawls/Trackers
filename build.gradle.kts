@@ -37,10 +37,6 @@ dependencies {
     implementation("cloud.commandframework:cloud-paper:1.3.0")
     implementation("org.spongepowered:configurate-hocon:4.0.0")
     implementation("net.kyori:adventure-text-minimessage:4.0.0-SNAPSHOT")
-
-    implementation("org.jdbi", "jdbi3-bom", "3.18.0")
-    implementation("org.jdbi", "jdbi3-core", "3.18.0")
-    implementation("org.jdbi", "jdbi3-sqlite", "3.18.0")
 }
 
 tasks {

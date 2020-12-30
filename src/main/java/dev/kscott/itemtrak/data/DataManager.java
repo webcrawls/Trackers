@@ -12,11 +12,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
-import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.sqlite3.SQLitePlugin;
-import sun.rmi.rmic.Names;
 
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -29,10 +25,6 @@ public class DataManager {
     private final @NonNull Map<@NonNull UUID, Map<@NonNull String, @NonNull TrackerConfig>> itemTrackerMap;
 
     private final @NonNull JavaPlugin plugin;
-
-    private final @NonNull Jdbi jdbi;
-
-    private final @NonNull String databasePath;
 
     private final @NonNull PaperCommandManager<CommandSender> commandManager;
 
@@ -49,13 +41,8 @@ public class DataManager {
             final @NonNull PaperCommandManager<CommandSender> commandManager
     ) {
         this.plugin = plugin;
-        this.databasePath = Paths.get(plugin.getDataFolder().toString(), "items.db").toString();
 
         this.trackerItemKey = new NamespacedKey(plugin, "itemtrak_item_uuid");
-
-        this.jdbi = Jdbi.create("jdbc:sqlite:" + databasePath)
-                .installPlugin(new SQLitePlugin());
-
         this.itemTrackerMap = new HashMap<>();
 
         this.commandManager = commandManager;
