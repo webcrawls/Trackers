@@ -17,11 +17,11 @@ public class TrackerConfig {
         this.format = format;
     }
 
-    public String getId() {
+    public @NonNull String getId() {
         return id;
     }
 
-    public Component getFormat() {
+    public @NonNull Component getFormat() {
         return format;
     }
 }

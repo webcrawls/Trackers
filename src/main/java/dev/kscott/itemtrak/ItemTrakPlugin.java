@@ -3,7 +3,7 @@ package dev.kscott.itemtrak;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import dev.kscott.itemtrak.command.CommandItemTrak;
-import dev.kscott.itemtrak.db.DatabaseManager;
+import dev.kscott.itemtrak.data.DataManager;
 import dev.kscott.itemtrak.inject.CommandModule;
 import dev.kscott.itemtrak.inject.PluginModule;
 import dev.kscott.itemtrak.inject.TrackerModule;
@@ -33,7 +33,7 @@ public final class ItemTrakPlugin extends JavaPlugin {
 
         trackerRegistry.registerTrackerConfig(new TrackerConfig("poop", MiniMessage.get().parse("<aqua>test</aqua>")));
 
-        injector.getInstance(DatabaseManager.class);
+        injector.getInstance(DataManager.class);
 
         injector.getInstance(CommandItemTrak.class);
     }
