@@ -45,7 +45,6 @@ public final class PluginModule extends AbstractModule {
                 .annotatedWith(Names.named("JavaPlugin"))
                 .toInstance(plugin);
 
-        this.bind(AudienceProvider.class).toInstance(audiences);
         this.bind(BukkitAudiences.class).toInstance(audiences);
     }
 
