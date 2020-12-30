@@ -59,27 +59,6 @@ public class DataManager {
         this.itemTrackerMap = new HashMap<>();
 
         this.commandManager = commandManager;
-
-        this.initializeDatabase();
-    }
-
-    /**
-     * Creates the table.
-     */
-    private void initializeDatabase() {
-        this.commandManager.taskRecipe()
-                .begin(jdbi)
-                .asynchronous(jdbi -> {
-                    jdbi.useHandle((handle) -> {
-                        handle.execute(
-                                "CREATE TABLE IF NOT EXISTS ITEMS(" +
-                                "ID INT PRIMARY KEY AUTOINCREMENT NOT NULL " +
-                                "UUID TEXT NOT NULL " +
-                                "TRACKER_ID TEXT NOT NULL " +
-                                "INT COUNT NOT NULL " +
-                                ")");
-                    });
-                });
     }
 
     public @Nullable Map<String, TrackerConfig> getTrackerData(final @NonNull UUID uuid) {
@@ -100,7 +79,7 @@ public class DataManager {
     }
 
     public @NonNull Map<String, TrackerConfig> getTrackerConfig(final @NonNull UUID uuid) {
-                
+
     }
 
     /**
