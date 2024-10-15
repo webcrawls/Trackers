@@ -1,14 +1,14 @@
-package dev.kscott.itemtrak;
+package sh.kaden.trackers;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import dev.kscott.itemtrak.command.CommandItemTrak;
-import dev.kscott.itemtrak.data.DataManager;
-import dev.kscott.itemtrak.inject.CommandModule;
-import dev.kscott.itemtrak.inject.PluginModule;
-import dev.kscott.itemtrak.inject.TrackerModule;
-import dev.kscott.itemtrak.tracker.TrackerConfig;
-import dev.kscott.itemtrak.tracker.TrackerRegistry;
+import sh.kaden.trackers.command.CommandItemTrak;
+import sh.kaden.trackers.data.DataManager;
+import sh.kaden.trackers.inject.CommandModule;
+import sh.kaden.trackers.inject.PluginModule;
+import sh.kaden.trackers.inject.TrackerModule;
+import sh.kaden.trackers.tracker.TrackerConfig;
+import sh.kaden.trackers.tracker.TrackerRegistry;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;

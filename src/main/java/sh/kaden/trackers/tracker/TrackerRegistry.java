@@ -1,4 +1,4 @@
-package dev.kscott.itemtrak.tracker;
+package sh.kaden.trackers.tracker;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;

@@ -1,4 +1,4 @@
-package dev.kscott.itemtrak.inject;
+package sh.kaden.trackers.inject;
 
 import cloud.commandframework.CommandManager;
 import cloud.commandframework.bukkit.CloudBukkitCapabilities;

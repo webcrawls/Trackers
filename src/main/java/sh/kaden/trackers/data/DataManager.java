@@ -1,8 +1,8 @@
-package dev.kscott.itemtrak.data;
+package sh.kaden.trackers.data;
 
 import cloud.commandframework.paper.PaperCommandManager;
 import com.google.inject.Inject;
-import dev.kscott.itemtrak.tracker.TrackerConfig;
+import sh.kaden.trackers.tracker.TrackerConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.CommandSender;

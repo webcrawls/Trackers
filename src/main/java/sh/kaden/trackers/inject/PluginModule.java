@@ -1,8 +1,8 @@
-package dev.kscott.itemtrak.inject;
+package sh.kaden.trackers.inject;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
-import dev.kscott.itemtrak.ItemTrakPlugin;
+import sh.kaden.trackers.ItemTrakPlugin;
 import net.kyori.adventure.platform.AudienceProvider;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bukkit.plugin.java.JavaPlugin;

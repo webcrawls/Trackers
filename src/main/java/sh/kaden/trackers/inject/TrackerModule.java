@@ -1,12 +1,12 @@
-package dev.kscott.itemtrak.inject;
+package sh.kaden.trackers.inject;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 import com.google.inject.name.Names;
-import dev.kscott.itemtrak.tracker.TrackerManager;
-import dev.kscott.itemtrak.tracker.TrackerRegistry;
+import sh.kaden.trackers.tracker.TrackerManager;
+import sh.kaden.trackers.tracker.TrackerRegistry;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.checkerframework.checker.nullness.qual.NonNull;
 

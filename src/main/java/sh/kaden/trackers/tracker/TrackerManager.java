@@ -1,4 +1,4 @@
-package dev.kscott.itemtrak.tracker;
+package sh.kaden.trackers.tracker;
 
 import com.google.inject.Inject;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
